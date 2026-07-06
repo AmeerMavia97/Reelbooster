@@ -1,0 +1,25 @@
+import { useGifts } from '@/app/store/api/getGift';
+import { useGiftCategories } from '@/app/store/api/getGiftCategories';
+import { useState } from 'react';
+import ViewstreamingrightsideGiftlist from './ViewstreamingrightsideGiftlist';
+import Viewstreamingrightsidebtn from './Viewstreamingrightsidebtn';
+import ViewstreamingrightsideGiftbtnBottom from './ViewstreamingrightsideGiftbtnBottom';
+import ViewstreamingrightsideAvaivlecoins from './ViewstreamingrightsideAvaivlecoins';
+
+function Viewstreamingrightside() {
+
+
+
+
+  return (
+    <div className=' w-full    relative h-full'>
+      <Viewstreamingrightsidebtn />
+      <ViewstreamingrightsideGiftlist />
+      {/* <ViewstreamingrightsideGiftbtnBottom /> */}
+      <ViewstreamingrightsideAvaivlecoins/>
+
+    </div>
+  )
+}
+
+export default Viewstreamingrightside
