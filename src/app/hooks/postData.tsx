@@ -28,7 +28,7 @@ const useApiPost = () => {
       };
 
       const response = await axios.post(
-        process.env.NEXT_PUBLIC_API_URL + url,
+        "https://api.yeteneksat.com/api" + url,
         bodyData,
         { headers }
       );

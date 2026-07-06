@@ -300,9 +300,9 @@ function Home() {
               <div className="relative w-full h-screen  overflow-hidden bg-dark md:max-w-lg">
                 {/* 🎥 Video */}
                 <video
-                          src={
-    reel?.Media?.find(m => m?.is_original)?.media_location
-  }
+                  src={
+                    reel?.Media?.find(m => m?.is_original)?.media_location
+                  }
                   className="w-full h-full object-cover"
                   loop
                   playsInline
@@ -413,11 +413,10 @@ function Home() {
                             reel.isFollowing === true
                           )
                         }
-                        className={`cursor-pointer text-[12px] text-primary rounded-xl font-normal inline-block drop-shadow w-16 py-1.5 ${
-                          reel.isFollowing === true
+                        className={`cursor-pointer text-[12px] text-primary rounded-xl font-normal inline-block drop-shadow w-16 py-1.5 ${reel.isFollowing === true
                             ? "border border-primary"
                             : "bg-main-green"
-                        }`}
+                          }`}
                       >
                         {reel.isFollowing === true ? "Following" : "Follow"}
                       </button>
@@ -425,47 +424,46 @@ function Home() {
                   </div>
 
                   {/* Caption */}
-                  {reel?.social_desc != "" && 
-                  
-                  
-                  <div className="text-sm text-primary pointer-events-auto max-w-[80%] md:max-w-[24rem]">
-                    <p
-                      className={`leading-tight drop-shadow ${
-                        expandedCaptions[reel.social_id] ? "" : "line-clamp-1"
-                      } transition-all duration-200`}
-                    >
-                      {reel.social_desc.split(/(\s+)/).map((part, index) =>
-                        part.startsWith("#") ? (
-                          <span
-                            key={index}
-                            className="text-main-green cursor-pointer"
-                            onClick={() => {
-                              dispatch(
-                                setHashtag({
-                                  hashtag_name: part.replace("#", ""), // 👈 get clicked hashtag
-                                  // count: total,
-                                })
-                              );
-                              router.push("/explore");
-                            }}
-                          >
-                            {part}
-                          </span>
-                        ) : (
-                          part
-                        )
-                      )}
-                    </p>
+                  {reel?.social_desc != "" &&
 
-                    {reel.social_desc?.length > 100 && (
-                      <button
-                        className="text-[#ABABAB] text-xs font-medium cursor-pointer"
-                        onClick={() => toggleCaption(reel.social_id)}
+
+                    <div className="text-sm text-primary pointer-events-auto max-w-[80%] md:max-w-[24rem]">
+                      <p
+                        className={`leading-tight drop-shadow ${expandedCaptions[reel.social_id] ? "" : "line-clamp-1"
+                          } transition-all duration-200`}
                       >
-                        {expandedCaptions[reel.social_id] ? "less" : "more"}
-                      </button>
-                    )}
-                  </div> }
+                        {reel.social_desc.split(/(\s+)/).map((part, index) =>
+                          part.startsWith("#") ? (
+                            <span
+                              key={index}
+                              className="text-main-green cursor-pointer"
+                              onClick={() => {
+                                dispatch(
+                                  setHashtag({
+                                    hashtag_name: part.replace("#", ""), // 👈 get clicked hashtag
+                                    // count: total,
+                                  })
+                                );
+                                router.push("/explore");
+                              }}
+                            >
+                              {part}
+                            </span>
+                          ) : (
+                            part
+                          )
+                        )}
+                      </p>
+
+                      {reel.social_desc?.length > 100 && (
+                        <button
+                          className="text-[#ABABAB] text-xs font-medium cursor-pointer"
+                          onClick={() => toggleCaption(reel.social_id)}
+                        >
+                          {expandedCaptions[reel.social_id] ? "less" : "more"}
+                        </button>
+                      )}
+                    </div>}
 
                   {/* Date and Location */}
                   <div className="flex gap-2 place-items-center">
