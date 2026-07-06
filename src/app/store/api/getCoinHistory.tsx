@@ -16,7 +16,7 @@ const fetchCoinHistory = async ({
   const MyUserId = Cookies.get("Reelboost_user_id");
 
   const { data } = await axios.post(
-    `${process.env.NEXT_PUBLIC_API_URL}/transaction/history`,
+    `https://api.yeteneksat.com/api/transaction/history`,
     {
       page: pageParam,
       receiver_id: MyUserId,

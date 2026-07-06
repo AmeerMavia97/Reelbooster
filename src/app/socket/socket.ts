@@ -39,7 +39,7 @@ let listenerAdded = false; // <- GLOBAL flag
 export const socketInstance = () => {
   if (!socket) {
     const token = Cookies.get("Reelboost_auth_token");
-    socket = io(`${process.env.NEXT_PUBLIC_SOCKET_URL}`, {
+    socket = io(`https://api.yeteneksat.com`, {
       path: "/socket",
       transports: ["websocket"],
       auth: { token },

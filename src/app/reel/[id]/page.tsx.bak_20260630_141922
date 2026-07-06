@@ -21,7 +21,7 @@ interface ReelRecord {
 async function fetchReel(id: string): Promise<ReelRecord | null> {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/social/get-social-noauth`,
+      `https://api.yeteneksat.com/api/social/get-social-noauth`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

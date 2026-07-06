@@ -29,8 +29,8 @@ function SuggestedAccounts() {
       setIsLoading(true);
       try {
         const apiUrl = token
-          ? `${process.env.NEXT_PUBLIC_API_URL}/users/find-user-not-following`
-          : `${process.env.NEXT_PUBLIC_API_URL}/users/find-user-no-auth`;
+          ? `https://api.yeteneksat.com/api/users/find-user-not-following`
+          : `https://api.yeteneksat.com/api/users/find-user-no-auth`;
 
         const response = await fetch(apiUrl, {
           method: "POST",

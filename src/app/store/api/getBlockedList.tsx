@@ -13,7 +13,7 @@ export const fetchBlockedUsers = async ({
   const token = Cookies.get("Reelboost_auth_token");
 
   const { data } = await axios.post<BlockedList>(
-    `${process.env.NEXT_PUBLIC_API_URL}/block/block-list`,
+    `https://api.yeteneksat.com/api/block/block-list`,
     { page: pageParam }, // ✅ send page in body
     {
       headers: {

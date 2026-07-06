@@ -14,7 +14,7 @@ export const fetchNotifications = async ({
   const token = Cookies.get("Reelboost_auth_token");
 
   const { data } = await axios.post<{ status: boolean; data: NotificationData }>(
-    `${process.env.NEXT_PUBLIC_API_URL}/users/get-notification-list`,
+    `https://api.yeteneksat.com/api/users/get-notification-list`,
     { page: pageParam }, // ✅ send page in body
     {
       headers: {

@@ -6,7 +6,7 @@ import Cookies from 'js-cookie'
 const fetchTransactionConf = async () => {
       const token = Cookies.get("Reelboost_auth_token");
     
-  const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/transaction/transaction_conf`,{
+  const { data } = await axios.post(`https://api.yeteneksat.com/api/transaction/transaction_conf`,{
     transaction_type:"withdrawal"
   },
   {

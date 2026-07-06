@@ -10,7 +10,7 @@ export async function updateNotificationStatus(
 
   try {
     const res = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/users/update-notification-list`,
+      `https://api.yeteneksat.com/api/users/update-notification-list`,
       {
         notification_ids: notification_ids, // all IDs in one param
         view_status,

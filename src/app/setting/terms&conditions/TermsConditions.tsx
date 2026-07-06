@@ -13,7 +13,7 @@ export default function TermsConditionsPage() {
     const fetchConfig = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/project_conf`,
+          `https://api.yeteneksat.com/api/project_conf`,
           {
             method: "GET",
             headers: {

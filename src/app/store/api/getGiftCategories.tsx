@@ -9,7 +9,7 @@ const fetchGiftCategories = async (page: number): Promise<GiftCategoryRes> => {
   const token = Cookies.get("Reelboost_auth_token");
 
   const { data } = await axios.post(
-    `${process.env.NEXT_PUBLIC_API_URL}/gift/get-gift-category`,
+    `https://api.yeteneksat.com/api/gift/get-gift-category`,
     { page }, // page goes in body
     {
       headers: {

@@ -41,7 +41,7 @@ export const useCommentList = (
       };
 
       const { data } = await axios.post<CommentList>(
-        `${process.env.NEXT_PUBLIC_API_URL}/comment/show-comment`,
+        `https://api.yeteneksat.com/api/comment/show-comment`,
         requestBody,
         {
           headers: {

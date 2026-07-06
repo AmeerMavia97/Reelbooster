@@ -14,7 +14,7 @@ export const fetchSavedList = async ({
   const token = Cookies.get("Reelboost_auth_token");
 
   const { data } = await axios.post<SavedList>(
-    `${process.env.NEXT_PUBLIC_API_URL}/save/saved-list`,
+    `https://api.yeteneksat.com/api/save/saved-list`,
     {
       save_by:myUserId,
       include: "Social",

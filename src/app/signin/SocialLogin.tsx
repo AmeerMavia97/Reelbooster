@@ -129,7 +129,7 @@ function SocialLogin() {
   // });
 
   useEffect(() => {
-    const facebookAppId = process.env.NEXT_PUBLIC_FACEBOOK_APP_ID;
+    const facebookAppId = "1038845251818651";
 
     if (!facebookAppId || facebookAppId.includes("Facebook")) {
       return;

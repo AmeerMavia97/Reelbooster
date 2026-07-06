@@ -12,7 +12,7 @@ export const useReportTypes = () => {
       if (!token) throw new Error("Auth token not found");
 
       const { data } = await axios.post<ReportType>(
-        `${process.env.NEXT_PUBLIC_API_URL}/report/report-types`,
+        `https://api.yeteneksat.com/api/report/report-types`,
         {},
         {
           headers: {

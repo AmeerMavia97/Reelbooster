@@ -15,7 +15,7 @@ const fetchGifts = async ({
   const token = Cookies.get("Reelboost_auth_token");
 
   const { data } = await axios.post(
-    `${process.env.NEXT_PUBLIC_API_URL}/gift/get-gift`,
+    `https://api.yeteneksat.com/api/gift/get-gift`,
     { page: pageParam, gift_category_id: categoryId },
     {
       headers: {

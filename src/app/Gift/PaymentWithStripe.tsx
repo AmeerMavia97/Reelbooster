@@ -136,7 +136,7 @@ const token = Cookies.get("Reelboost_auth_token")
 
     const fetchConfig = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/project_conf`);
+        const res = await fetch(`https://api.yeteneksat.com/api/project_conf`);
         const data: ProjectConfigRes = await res.json();
         if (data?.data?.stripe_public_key) {
           setStripePromise(loadStripe(data.data.stripe_public_key));

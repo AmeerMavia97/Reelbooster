@@ -21,7 +21,7 @@ async function fetchMusic({
   const token = Cookies.get("Reelboost_auth_token");
 
   const { data } = await axios.post(
-    `${process.env.NEXT_PUBLIC_API_URL}/music/get-music`,
+    `https://api.yeteneksat.com/api/music/get-music`,
     { page: pageParam },
     {
       headers: {

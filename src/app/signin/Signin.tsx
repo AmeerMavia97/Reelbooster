@@ -25,7 +25,7 @@ function Signin() {
   useEffect(() => {
     const fetchAuthConfig = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/project_conf`);
+        const res = await fetch(`https://api.yeteneksat.com/api/project_conf`);
         const data: ProjectConfigRes = await res.json();
         const phoneAuth = !!data?.data?.phone_authentication;
         setPhoneEnabled(phoneAuth);

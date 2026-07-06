@@ -27,7 +27,7 @@ export default function GPayPayment() {
       const fetchConfig = async () => {
         try {
           const res = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/project_conf`
+            `https://api.yeteneksat.com/api/project_conf`
           );
           const data: ProjectConfigRes = await res.json();
           if (data?.data?.gpay_merch_id) setMerchantId(data.data.gpay_merch_id);

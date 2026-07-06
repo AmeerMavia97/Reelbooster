@@ -15,7 +15,7 @@ const useReplies = (commentRefId: number, enabled: boolean) => {
     const token = Cookies.get("Reelboost_auth_token");
 
     const { data } = await axios.post<CommentList>(
-      `${process.env.NEXT_PUBLIC_API_URL}/comment/show-comment`,
+      `https://api.yeteneksat.com/api/comment/show-comment`,
       {
         include: "User",
         page: 1,

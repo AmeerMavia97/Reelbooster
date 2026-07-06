@@ -49,7 +49,7 @@ function UploadReel() {
     const fetchConfig = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/project_conf`
+          `https://api.yeteneksat.com/api/project_conf`
         );
         const data: ProjectConfigRes = await res.json();
         if (data?.data?.mediaflow) setMediaflow(data.data.mediaflow);
@@ -113,7 +113,7 @@ function UploadReel() {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/social/upload-social`,
+        `https://api.yeteneksat.com/api/social/upload-social`,
         {
           method: "POST",
           body: formDataToSend,
