@@ -297,7 +297,8 @@ function Home() {
               data-index={index}
               className="relative h-screen snap-start flex justify-center gap-4 items-center"
             >
-              <div className="relative w-full h-screen  overflow-hidden bg-dark md:max-w-lg">
+              <div className="relative w-full h-[93vh] mt-10
+             overflow-hidden bg-dark md:max-w-md">
                 {/* 🎥 Video */}
                 <video
                   src={
