@@ -161,13 +161,15 @@ function SocialLogin() {
   }, []);
 
   const facebookLogin = () => {
+    console.log("hello");
+
     if (!facebookReady || !window.FB) {
       toast.error("Facebook login is not configured");
       return;
     }
 
     window.FB.login(
-      async (loginResponse) => {
+      (loginResponse) => {
         console.log(loginResponse);
 
         if (loginResponse.status !== "connected") {
@@ -175,10 +177,10 @@ function SocialLogin() {
           return;
         }
 
-        await handleSocialAuth(
+        handleSocialAuth(
           "facebook",
           loginResponse.authResponse!.accessToken
-        );
+        ).catch(console.error);
       },
       { scope: "public_profile,email" }
     );
