@@ -168,6 +168,7 @@ function SocialLogin() {
 
     window.FB.login(
       async (loginResponse) => {
+        console.log(loginResponse);
 
         if (loginResponse.status !== "connected") {
           toast.error("Facebook login cancelled");
@@ -178,7 +179,6 @@ function SocialLogin() {
           "facebook",
           loginResponse.authResponse!.accessToken
         );
-
       },
       { scope: "public_profile,email" }
     );
@@ -189,21 +189,21 @@ function SocialLogin() {
       <div className="flex flex-col gap-3">
         <div className="mx-10">
           <GoogleLogin
-          locale="tr"
-  text="signup_with"
-          onSuccess={async (credentialResponse) => {
-            if (!credentialResponse.credential) {
-              toast.error("Google login failed");
-              return;
-            }
+            locale="tr"
+            text="signup_with"
+            onSuccess={async (credentialResponse) => {
+              if (!credentialResponse.credential) {
+                toast.error("Google login failed");
+                return;
+              }
 
-            await handleSocialAuth(
-              "google",
-              credentialResponse.credential
-            );
-          }}
-          onError={() => toast.error("Google login failed")}
-        />
+              await handleSocialAuth(
+                "google",
+                credentialResponse.credential
+              );
+            }}
+            onError={() => toast.error("Google login failed")}
+          />
         </div>
 
         <button
